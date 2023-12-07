@@ -1,6 +1,6 @@
 import Button from "../../common/Button"
 import styles from "./CatalogItem.module.css"
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DentalChair from "../../../images/dental_chair.png";
 
 
