@@ -1,0 +1,164 @@
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+.link {
+    width: 6%;
+    height: 50px;
+}
+.homeButton {
+    width: 100%; 
+    height: 100%;   
+    border-radius: 25px;  
+    font-weight: 600px;
+    font-size: 16px;
+}
+.catalogButton {
+    width: 100%; 
+    height: 100%;   
+    border-radius: 25px; 
+    font-weight: 600px;
+    font-size: 14px;
+    background-color: gray;
+}
+.cartButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px; 
+    font-weight: 600px;
+    font-size: 14px;
+}
+.dentalChair{
+    margin-top: 20px;
+}
+.footer {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footerInfo {
+    text-align: c;
+    width: 20%;
+}
+.footerLogo {
+    text-align: center;
+    width: 1%;
+}
+.footerLinks {
+    text-align: right;
+    width: 20%;
+}
+.footerCopyrights {
+    padding: 15px;
+    border-top: 1px solid black;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.footerLinks a img {
+    width: 50px;
+    height: 50px;
+}
+.footerLogo img {
+    width: 100px;
+    height: 100px;
+}
+.catalogItemPage {
+    height: 100vh;
+    width: 100%;
+}
+.top {
+    height: 50%;
+}
+.bottom {
+    height: 50%;
+}
+.img {
+    width: 200px;
+    height: 200px;
+}
+.catalogItemPage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.top {
+    display: flex;
+    width: 80%;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.characteristics {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.char {
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+.title {
+    font-size: 50px;
+    font-family: 'Roboto';
+}
+.fields {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.searchBar {
+    width: 30%;
+}
+.searchBar input {
+    height: 30px;
+    border-radius: 10px;
+}
+.selection select{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+}
+.selection {
+    width: 100%;
+}
+.select {
+    width: 20%;
+}
+.bottom {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.price {
+    font-size: 20px;
+}
+.goBack {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+    text-decoration: none;
+}
+.addCart {
+    width: 10%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+}

@@ -1,0 +1,140 @@
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+.link {
+    width: 6%;
+    height: 50px;
+}
+.homeButton {
+    width: 100%; 
+    height: 100%;   
+    border-radius: 10px;  
+    font-weight: 600px;
+    font-size: 16px;
+    background-color: gray;
+}
+.catalogButton {
+    width: 100%; 
+    height: 100%;   
+    border-radius: 10px;  
+    font-weight: 600px;
+    font-size: 14px; 
+}
+.cartButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;  
+    font-weight: 600px;
+    font-size: 14px;
+}
+.searchPlace{
+    width: 100px;
+}
+.heading {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 500px;
+    align-items: end;
+    justify-content: space-around;
+}
+
+.headingPhoto img {
+    width: 200px;
+    margin-bottom: 120px;
+    margin-left: 140px;
+}
+.info {
+    width: 40%;
+    height: 400px;
+}
+.info section {
+    color: gray;
+    font-size: 20px;
+}
+.headingInfo {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.headingInfo section{
+    font-size: 12px;
+    text-align: center;
+    line-height: 0%;
+}
+.headingInfo img{
+    width: 150px;
+    height: 150px;
+}
+.bottomInfo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.secondInfo img{
+    width: 100px;
+    height: 150px;
+}
+.thirdInfo img{
+    width: 100px;
+    height: 150px;
+}
+.viewMore{
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+}
+.viewMoreButton {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footer {
+    margin-top: 100px;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footerInfo {
+    text-align: c;
+    width: 20%;
+}
+.chairImage {
+    text-align: center;
+    width: 1%;
+    height: 20px;
+}
+.footerLinks {
+    text-align: right;
+    width: 20%;
+}
+.footerCopyrights {
+    padding: 15px;
+    border-top: 1px solid black;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.footerLinks a img {
+    height: 30px;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+.footerLogo img {
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+button:active {
+    opacity: 0.5;
+}
