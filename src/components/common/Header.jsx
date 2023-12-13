@@ -13,7 +13,7 @@ function Header(props) {
                 />
                 <Link className={props.link} to="/"><Button className={props.homeButton} text={"Home"}></Button></Link>
                 <Link className={props.link} to="/catalog"><Button className={props.catalogButton} text={"Catalog"}></Button></Link>
-                <Link className={props.link} to="/"><Button className={props.cartButton} text={"Cart"}></Button></Link>
+                <Link className={props.link} to="/cart"><Button className={props.cartButton} text={"Cart"}></Button></Link>
                 <div className="searchPlace"></div>
                 {props.children}
             </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../common/Header";
 import SearchBar from "../../common/SearchBar";
 import Select from "../../common/Select";
@@ -6,65 +6,55 @@ import styles from "./Catalog.module.css";
 import Button from "../../common/Button";
 import CatalogItem from "../../page_related/CatalogItem/CatalogItem";
 import Footer from "../../common/Footer";
+import getChairs from "../../../api";
+import axios from "axios";
 
-export const data = [
-  { id: 1, title: "Chair A", text: "Comfortable chair", price: 60 },
-  { id: 2, title: "Chair B", text: "Modern chair", price: 300 },
-  { id: 3, title: "Chair C", text: "Classic chair", price: 550 },
-];
 
 function Catalog() {
-  const [catalogData, setCatalogData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [simulatedData, setChairs] = useState([]);
 
   const categories = [
-    { label: "Price", options: ["all", "Expensive", "Medium", "Cheap"] },
+    { label: "Price", options: ["Large", "Medium", "Small"] },
   ];
 
-  const simulatedData = useMemo(() => data, []);
+  useEffect(() => {
+    getChairs().then((data) => {
+      setChairs(data);
+    });
+  }, []);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setSelectedSubcategory(null);
   };
 
-  const handleSubcategoryChange = (subcategory) => {
-    setSelectedSubcategory(subcategory);
-  };
-
-  const filterByPrice = (catalogData, filterValue) => {
-    return catalogData.filter((item) => {
-      switch (filterValue) {
-        case "cheap":
-          return item.price < 70;
-        case "medium":
-          return item.price >= 70 && item.price < 500;
-        case "expensive":
-          return item.price >= 500;
-        default:
-          return true;
-      }
-    });
-  };
-
-  const filterItems = () => {
+  const filterItems = async () => {
     setLoading(true);
-
-    let filteredDataCopy = [...simulatedData];
-
-    document.querySelectorAll("select").forEach((filter, index) => {
-      const filterValue = filter.value.toLowerCase().trim();
-      if (filterValue && filterValue !== "all") {
-        filteredDataCopy = filterByPrice(filteredDataCopy, filterValue);
-      }
-    });
-
-    setFilteredData(filteredDataCopy);
-    setLoading(false);
+  
+    try {
+      const response = await axios.get('http://localhost:3001/chairs');
+      console.log(response.data)
+      let filteredDataCopy = response.data;
+  
+      document.querySelectorAll("select").forEach((filter, index) => {
+        const filterValue = filter.value.toLowerCase().trim();
+        console.log(filterValue)
+        if (filterValue) {
+          console.log(filteredDataCopy.filter((item) => String(item.size).toLowerCase().trim() === filterValue))
+          filteredDataCopy = filteredDataCopy.filter((item) => String(item.size).toLowerCase().trim() === filterValue);
+        }
+      });
+  
+      setFilteredData(filteredDataCopy);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
   const searching = () => {
     const searchBar = document.getElementById("search-bar");
@@ -78,7 +68,6 @@ function Catalog() {
   };
 
   useEffect(() => {
-    setCatalogData(simulatedData);
     setFilteredData(simulatedData);
   }, [simulatedData]);
   return (
@@ -99,12 +88,11 @@ function Catalog() {
                 className={styles.selection}
                 id={`select-${index}`}
                 options={category.options}
-                onChange={(value) =>
-                  index === 0
-                    ? handleCategoryChange(value)
-                    : handleSubcategoryChange(value)
-                }
-                disabled={index === 1 && !selectedCategory}
+                onChange={(e) => {
+                  console.log(e);
+                  handleCategoryChange(e.target.value);
+                }}
+                disabled={index === 0 && selectedCategory === "all"}
               />
             ))}
             <div className={styles.applyButton}>

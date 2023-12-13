@@ -8,25 +8,32 @@ import Select from "../../common/Select";
 import SearchBar from "../../common/SearchBar";
 import Button from "../../common/Button";
 import DentalChair from "../../../images/dental_chair.png";
-import { data } from "../../pages/Catalog/Catalog";
+import { getChair } from "../../../api";
+import { useDispatch } from "react-redux";
 
 const CatalogItemPage = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const [chairData, setChairData] = useState(data);
+  const [chairData, setChairData] = useState(null);
 
   useEffect(() => {
-    const numericId = parseInt(id, 10);
-    const foundChair = data.find((item) => item.id === numericId);
-
-    if (foundChair) {
-      setChairData(foundChair);
-    } else {
-      console.error(`Chair with id ${numericId} not found`);
+    async function fetchChair() {
+      const chair = await getChair(id);
+      setChairData(chair[0])
     }
+    fetchChair();   
   }, [id]);
 
   if (!chairData) {
     return null;
+  }
+
+  function addToCart() {
+    dispatch(addToCart(chairData));
+  }
+
+  function removeFromCart() {
+    dispatch(removeFromCart(chairData.id));
   }
 
   const characteristics = [];
