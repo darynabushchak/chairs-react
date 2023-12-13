@@ -1,0 +1,92 @@
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+
+.link {
+    width: 6%;
+    height: 50px;
+}
+
+.homeButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: 600px;
+    font-size: 16px;
+}
+
+.catalogButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: 600px;
+    font-size: 16px;
+}
+
+.cartButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: 600px;
+    font-size: 14px;
+    background-color: gray;
+}
+
+.cartButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: 600px;
+    font-size: 14px;
+}
+
+.quantityControl {
+    margin-left: 20px;
+}
+
+.removeButton {
+    width: 6%;
+    height: 100%;
+    border-radius: 5px;
+    font-weight: 600px;
+    font-size: 16px;
+}
+
+.backToCatalogButton {
+    width: 10%;
+    height: 100%;
+    border-radius: 5px;
+    font-weight: 600px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.continueButton {
+    width: 6%;
+    height: 100%;
+    border-radius: 5px;
+    font-weight: 600px;
+    font-size: 16px;
+}
+
+.chairBlockCart {
+    border: 2px solid #4e4c4c;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 25px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantityName {
+    display: flex;
+    flex-direction: row;
+}

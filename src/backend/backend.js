@@ -47,14 +47,14 @@ app.get("/chairs/filter", async (req, res) => {
     let query;
     let queryParams;
 
-    if (parametr === "expensive") {
-      query = "SELECT * FROM chair_info WHERE price > $1";
+    if (parametr === "large") {
+      query = "SELECT * FROM chair_info WHERE size > $1";
       queryParams = [500];
     } else if (parametr === "medium") {
-      query = "SELECT * FROM chair_info WHERE price > $1 AND price < $2";
+      query = "SELECT * FROM chair_info WHERE size > $1 AND price < $2";
       queryParams = [70, 500];
-    } else if (parametr === "cheap") {
-      query = "SELECT * FROM chair_info WHERE price < $1";
+    } else if (parametr === "small") {
+      query = "SELECT * FROM chair_info WHERE size < $1";
       queryParams = [70];
     } else {
       return res

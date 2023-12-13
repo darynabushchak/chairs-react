@@ -9,9 +9,10 @@ import SearchBar from "../../common/SearchBar";
 import Button from "../../common/Button";
 import DentalChair from "../../../images/dental_chair.png";
 import { getChair } from "../../../api";
+import { useDispatch } from "react-redux";
 
 const CatalogItemPage = () => {
-
+  const dispatch = useDispatch();
   const { id } = useParams();
   const [chairData, setChairData] = useState(null);
 
@@ -25,6 +26,14 @@ const CatalogItemPage = () => {
 
   if (!chairData) {
     return null;
+  }
+
+  function addToCart() {
+    dispatch(addToCart(chairData));
+  }
+
+  function removeFromCart() {
+    dispatch(removeFromCart(chairData.id));
   }
 
   const characteristics = [];

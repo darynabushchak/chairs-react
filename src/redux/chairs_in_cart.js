@@ -12,9 +12,19 @@ export const chairsInCartSlice = createSlice({
         (chair) => chair.id !== action.payload
       );
     },
+    updateQuantity: (state, action) => {
+      const { chairId, change } = action.payload;
+      const chairToUpdate = state.chairs.find((chair) => chair.id === chairId);
+
+      if (chairToUpdate) {
+        console.log("gfgdhdfhdg")
+        chairToUpdate.quantity += change;
+        console.log(chairToUpdate.quantity)
+      }
+    },
   },
 });
 
-export const {addToCart, removeFromCart} = chairsInCartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity } = chairsInCartSlice.actions;
 
 export default chairsInCartSlice.reducer;
